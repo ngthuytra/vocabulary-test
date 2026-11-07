@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Test – Speaking Class</title>
+<style>
+:root{--ink:#243247;--muted:#64748b;--accent:#3157a4;--pale:#f3f6fc;--line:#dce4f0;--good:#18794e;--bad:#b42318}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fb;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}
+.wrap{max-width:900px;margin:32px auto;padding:0 16px 48px}
+header,.section,.result{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px;box-shadow:0 4px 16px rgba(31,51,85,.05)}
+header{text-align:center;background:linear-gradient(135deg,#eef3ff,#fff)}
+h1{margin:0 0 6px;font-size:28px;color:#203b75}
+.subtitle{color:var(--muted);margin:0}
+.student{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;text-align:left}
+label{font-weight:600;font-size:14px}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:white;color:var(--ink)}
+.student input{margin-top:5px}
+h2{font-size:20px;margin:0 0 4px;color:#203b75}
+.instruction{margin:0 0 18px;color:var(--muted);font-size:14px}
+.q{padding:14px 0;border-top:1px solid #edf0f5}
+.q:first-of-type{border-top:0}
+.q-title{font-weight:600;margin-bottom:8px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:7px 14px}
+.option{font-weight:400;display:flex;gap:8px;align-items:flex-start}
+.option input{margin-top:5px}
+.wordbank{padding:12px;background:var(--pale);border-radius:9px;margin-bottom:14px}
+select{max-width:320px}
+textarea{min-height:76px;resize:vertical}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+button{border:0;border-radius:9px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer}
+.primary{background:var(--accent);color:#fff}
+.secondary{background:#e8edf6;color:#243247}
+.result{display:none;border-left:5px solid var(--good)}
+.result h2{color:var(--good)}
+.small{font-size:13px;color:var(--muted)}
+.feedback{margin-top:6px;font-size:13px}
+.correct{color:var(--good)} .incorrect{color:var(--bad)}
+@media(max-width:620px){.student,.options{grid-template-columns:1fr}header,.section,.result{padding:18px}.wrap{margin-top:16px}h1{font-size:23px}}
+@media print{body{background:#fff}.wrap{max-width:none;margin:0}.section,header{box-shadow:none;break-inside:avoid}.actions{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>VOCABULARY TEST</h1>
+  <p class="subtitle">Speaking Class</p>
+  <div class="student">
+    <div><label for="studentName">Họ và tên</label><input id="studentName" type="text" placeholder="Nhập họ và tên"></div>
+    <div><label for="className">Lớp</label><input id="className" type="text" placeholder="Nhập lớp"></div>
+  </div>
+</header>
+
+<section class="section">
+<h2>PART 1. VOCABULARY – CHOOSE THE CORRECT ANSWER</h2>
+<p class="instruction">Chọn đáp án đúng nhất. (20 câu – 4 điểm)</p>
+<div id="part1"></div>
+</section>
+
+<section class="section">
+<h2>PART 2. FILL IN THE BLANKS</h2>
+<p class="instruction">Điền từ thích hợp vào chỗ trống. (15 câu – 3 điểm)</p>
+<div class="wordbank"><strong>Từ cho sẵn:</strong><br>afford – crowded – nervous – complain – assistance – opportunity – unfamiliar – target – natural – freezing – reception – process – fashion – facility – interfere</div>
+<div id="part2"></div>
+</section>
+
+<section class="section">
+<h2>PART 3. MATCHING</h2>
+<p class="instruction">Nối cụm từ tiếng Anh với nghĩa tiếng Việt phù hợp. (10 câu – 2 điểm)</p>
+<div id="part3"></div>
+</section>
+
+<section class="section">
+<h2>PART 4. TRANSLATION</h2>
+<p class="instruction">Dịch các câu sau sang tiếng Anh. (5 câu – 1 điểm). Phần này cần giáo viên chấm.</p>
+<div id="part4"></div>
+</section>
+
+<section class="section">
+<h2>PART 5. SITUATION</h2>
+<p class="instruction">Dựa vào từng ngữ cảnh thực tế để sử dụng những câu hỏi phù hợp. (2 câu – 10 điểm). Phần này cần giáo viên chấm.</p>
+<div class="q">
+  <div class="q-title">Situation 1: At a supermarket</div>
+  <p>Bạn đang ở một nơi không quen thuộc và muốn tìm siêu thị gần nhất. Đường phố khá đông vì đang trong giờ cao điểm. Hãy hỏi người dân địa phương đường đi đến siêu thị.</p>
+  <textarea id="situation1" placeholder="Write your response here..."></textarea>
+</div>
+<div class="q">
+  <div class="q-title">Situation 2: At a restaurant</div>
+  <p>Bạn đi ăn trưa cùng bạn bè tại một nhà hàng địa phương. Hãy hỏi nhân viên về món ăn được đề xuất, nguyên liệu của món ăn, món khai vị và món chính. Sau đó, hỏi xem phí phục vụ đã được bao gồm chưa.</p>
+  <textarea id="situation2" placeholder="Write your response here..."></textarea>
+</div>
+</section>
+
+<div class="actions">
+<button class="primary" type="button" onclick="submitTest()">Nộp bài / Submit</button>
+<button class="secondary" type="button" onclick="window.print()">In bài làm</button>
+<button class="secondary" type="button" onclick="resetTest()">Làm lại</button>
+</div>
+
+<section class="result" id="result" aria-live="polite">
+<h2>Kết quả phần trắc nghiệm</h2>
+<p id="scoreLine"></p>
+<p id="detailLine" class="small"></p>
+<p class="small">Lưu ý: Hệ thống tự chấm Part 1, Part 2 và Part 3 (tổng 9 điểm). Part 4 (1 điểm) và Part 5 (10 điểm) là câu trả lời tự luận, cần giáo viên chấm. Kết quả chỉ hiển thị trên thiết bị đang làm bài, chưa tự động gửi về giáo viên.</p>
+<button class="secondary" type="button" onclick="downloadAnswers()">Tải bài làm (.txt)</button>
+</section>
+</div>
+
+<script>
+const part1 = [
+["“Crowded” có nghĩa là gì?",["Yên tĩnh","Đông đúc","Vắng vẻ","Rộng rãi"],1],
+["“Nervous” có nghĩa là:",["Lo lắng","Vui vẻ","Tức giận","Mệt mỏi"],0],
+["“Assistance” có nghĩa là:",["Lời khuyên","Sự giúp đỡ","Cơ hội","Sự phàn nàn"],1],
+["“Opportunity” có nghĩa là:",["Khó khăn","Mục tiêu","Cơ hội","Kết quả"],2],
+["“Afford” có nghĩa là:",["Có đủ khả năng chi trả","Mượn tiền","Tiết kiệm tiền","Kiếm tiền"],0],
+["“Complain” có nghĩa là:",["Giải thích","Phàn nàn","Đồng ý","Giới thiệu"],1],
+["“Unfamiliar” có nghĩa là:",["Quen thuộc","Nổi tiếng","Không quen thuộc","Đơn giản"],2],
+["“Reception” trong ngữ cảnh điện thoại có nghĩa là:",["Pin điện thoại","Sóng điện thoại","Màn hình","Cuộc gọi"],1],
+["“Rush hour” có nghĩa là:",["Giờ nghỉ trưa","Giờ cao điểm","Giờ làm việc","Giờ ăn tối"],1],
+["“Economist” có nghĩa là:",["Nhà kinh tế học","Giáo viên","Nhà báo","Nhân viên bán hàng"],0],
+["“Green with envy” có nghĩa là:",["Rất vui vẻ","Rất ghen tị","Rất mệt mỏi","Rất lo lắng"],1],
+["“Butt in” có nghĩa là:",["Tham gia","Ngắt lời hoặc xen vào","Rời khỏi","Giúp đỡ"],1],
+["“In ages” có nghĩa là:",["Trong nhiều năm tới","Từ lâu rồi","Mỗi ngày","Ngay lập tức"],1],
+["“Split the bill” có nghĩa là:",["Gọi món","Thanh toán riêng","Chia hóa đơn","Hủy hóa đơn"],2],
+["“Stop by” có nghĩa là:",["Ghé qua","Đi thẳng","Quay lại","Đi xa"],0],
+["“By any chance” thường được dùng với nghĩa:",["Chắc chắn","Tình cờ / liệu có thể","Không bao giờ","Ngay lập tức"],1],
+["“Drive me crazy” có nghĩa là:",["Làm tôi vui","Làm tôi phát điên / rất khó chịu","Làm tôi ngạc nhiên","Làm tôi buồn ngủ"],1],
+["“On thin ice” có nghĩa là:",["Gặp nguy hiểm hoặc ở tình thế rủi ro","Đang rất vui","Đang nghỉ ngơi","Đang gặp may mắn"],0],
+["“Freezing” có nghĩa là:",["Nóng bức","Mát mẻ","Lạnh cóng","Ấm áp"],2],
+["“Ingredients” có nghĩa là:",["Dụng cụ","Nguyên liệu","Món ăn","Hóa đơn"],1]
+];
+const part2 = [
+["I can't ________ to buy that expensive car.","afford"],
+["The supermarket is very ________ on weekends.","crowded"],
+["She feels ________ before the English exam.","nervous"],
+["Don't ________ about everything.","complain"],
+["Thank you for your ________.","assistance"],
+["This is a great ________ to learn English.","opportunity"],
+["I am in an ________ place, so I need a map.","unfamiliar"],
+["My main ________ is to improve my speaking skills.","target"],
+["Her English sounds very ________.","natural"],
+["It's ________ outside. You should wear a warm coat.","freezing"],
+["I can't hear you because the phone ________ is poor.","reception"],
+["Learning a new language is a long ________.","process"],
+["She always wears fashionable clothes. She loves ________.","fashion"],
+["This school has modern learning ________.","facility"],
+["Don't ________ in other people's business.","interfere"]
+];
+const matching = [
+["Go straight ahead","C. Đi thẳng"],["Go past","D. Đi qua"],["Go along","E. Đi dọc theo"],
+["On time","B. Đúng giờ"],["Don't mention it","A. Không có gì đâu"],["Hit the nail on the head","F. Bạn nói rất đúng"],
+["Way to go!","G. Làm tốt lắm!"],["Shake in my shoes","H. Rất sợ hãi"],["It's my pleasure","I. Tôi rất sẵn lòng"],["Make a recommendation","J. Đưa ra lời gợi ý"]
+];
+const meanings = ["A. Không có gì đâu","B. Đúng giờ","C. Đi thẳng","D. Đi qua","E. Đi dọc theo","F. Bạn nói rất đúng","G. Làm tốt lắm!","H. Rất sợ hãi","I. Tôi rất sẵn lòng","J. Đưa ra lời gợi ý"];
+function render(){
+ document.getElementById("part1").innerHTML=part1.map((q,i)=>`<div class="q"><div class="q-title">${i+1}. ${q[0]}</div><div class="options">${q[1].map((a,j)=>`<label class="option"><input type="radio" name="p1_${i}" value="${j}"> ${"ABCD"[j]}. ${a}</label>`).join("")}</div></div>`).join("");
+ document.getElementById("part2").innerHTML=part2.map((q,i)=>`<div class="q"><label class="q-title" for="p2_${i}">${i+1}. ${q[0]}</label><input id="p2_${i}" type="text" autocomplete="off" placeholder="Your answer"></div>`).join("");
+ document.getElementById("part3").innerHTML=matching.map((q,i)=>`<div class="q"><label class="q-title" for="p3_${i}">${i+1}. ${q[0]}</label><select id="p3_${i}"><option value="">-- Chọn nghĩa phù hợp --</option>${meanings.map(m=>`<option value="${m[0]}">${m}</option>`).join("")}</select></div>`).join("");
+ const translations=["Tôi không đủ khả năng mua chiếc xe đắt tiền đó.","Siêu thị này rất đông vào giờ cao điểm.","Bạn có thể chỉ đường đến siêu thị gần nhất không?","Tôi đang cân nhắc nghỉ công việc hiện tại.","Tôi rất vui được giúp đỡ bạn."];
+ document.getElementById("part4").innerHTML=translations.map((q,i)=>`<div class="q"><label class="q-title" for="p4_${i}">${i+1}. ${q}</label><textarea id="p4_${i}" placeholder="Translate into English..."></textarea></div>`).join("");
+}
+function submitTest(){
+ let p1=0,p2=0,p3=0;
+ part1.forEach((q,i)=>{const a=document.querySelector(`input[name="p1_${i}"]:checked`);if(a&&Number(a.value)===q[2])p1++;});
+ part2.forEach((q,i)=>{if(document.getElementById(`p2_${i}`).value.trim().toLowerCase()===q[1])p2++;});
+ matching.forEach((q,i)=>{if(document.getElementById(`p3_${i}`).value===q[1][0])p3++;});
+ const points=p1*.2+p2*.2+p3*.2;
+ document.getElementById("scoreLine").textContent=`${document.getElementById("studentName").value.trim()||"Học sinh"}: ${points.toFixed(1)}/9 điểm tự động chấm.`;
+ document.getElementById("detailLine").textContent=`Part 1: ${p1}/20 câu (${(p1*.2).toFixed(1)}/4 điểm) · Part 2: ${p2}/15 câu (${(p2*.2).toFixed(1)}/3 điểm) · Part 3: ${p3}/10 câu (${(p3*.2).toFixed(1)}/2 điểm).`;
+ document.getElementById("result").style.display="block";
+ document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+function downloadAnswers(){
+ const lines=[`VOCABULARY TEST – SPEAKING CLASS`,`Họ tên: ${document.getElementById("studentName").value}`,`Lớp: ${document.getElementById("className").value}`,"","PART 1"];
+ part1.forEach((q,i)=>{const a=document.querySelector(`input[name="p1_${i}"]:checked`);lines.push(`${i+1}. ${a? "ABCD"[Number(a.value)]+". "+q[1][Number(a.value)]:"[Chưa trả lời]"}`)});
+ lines.push("","PART 2");part2.forEach((q,i)=>lines.push(`${i+1}. ${document.getElementById(`p2_${i}`).value}`));
+ lines.push("","PART 3");matching.forEach((q,i)=>lines.push(`${i+1}. ${q[0]} – ${document.getElementById(`p3_${i}`).value||"[Chưa chọn]"}`));
+ lines.push("","PART 4");for(let i=0;i<5;i++)lines.push(`${i+1}. ${document.getElementById(`p4_${i}`).value}`);
+ lines.push("","PART 5 – SITUATION 1",document.getElementById("situation1").value,"","SITUATION 2",document.getElementById("situation2").value);
+ const blob=new Blob(["\ufeff"+lines.join("\n")],{type:"text/plain;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="vocabulary-test-answers.txt";a.click();URL.revokeObjectURL(url);
+}
+function resetTest(){if(confirm("Bạn có chắc muốn xóa toàn bộ câu trả lời?")){document.querySelectorAll("input[type=radio]").forEach(x=>x.checked=false);document.querySelectorAll("input[type=text],textarea").forEach(x=>x.value="");document.querySelectorAll("select").forEach(x=>x.value="");document.getElementById("result").style.display="none";window.scrollTo({top:0,behavior:"smooth"});}}
+render();
+</script>
+</body>
+</html>
